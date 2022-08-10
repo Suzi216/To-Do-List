@@ -15,19 +15,10 @@
 
 **To be able to reproduce this project you need to copy the repository in your local workspace.**
 **Modify this file to match your project, remove sections that don't apply. Feel free to open a pull requests for any changes.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Any editor
-
-### Setup linter
-
-### Install node.js
-
-
-## Live Video (if available)
-
+**Install the node.js**
+**Initialize the package using this command npm init -y**
+** Install and run all the linters from this link:https://github.com/microverseinc/linters-config/tree/master/html-css-js**
+**Launch the project using this command npm run build**
 
 ## Live Demo (if available)
 
@@ -44,6 +35,10 @@ To get a local copy up and running follow these simple example steps.
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Contribution
+
+Contributions and issues [click](https://github.com/Suzi216/To-Do-List/issues) are most welcome !
 
 ## Acknowledgments
 
