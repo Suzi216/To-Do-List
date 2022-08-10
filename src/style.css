@@ -1,21 +1,15 @@
-/* body {
-    background-color: bisque ;
-
-} */
-
 body div {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    right: 25%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  right: 25%;
 }
 
-.item{
-   display: flex;
-   flex-direction: row;
-   list-style: none;
-   justify-content:flex-start;
-   grid-gap: 10%;
-   border: 2px solid black; 
-
+.item {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+  grid-gap: 10%;
+  border: 2px solid black;
 }
