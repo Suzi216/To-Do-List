@@ -1,31 +1,30 @@
 import './style.css';
+import task from './list.js';
 
-const m = document.getElementById('lists');
 
-const task = [
-  {
-    description: 'Task ',
-    complete: false,
-    index: 1,
-  },
-  {
-    description: 'Task ',
-    complete: false,
-    index: 2,
-  },
-  {
-    description: 'Task ',
-    complete: false,
-    index: 3,
-  },
-];
+const list = document.getElementById('lists');
+const input=document.querySelector(".input");
 
-const display = () => {
-  for (let i = 0; i < task.length; i += 1) {
+//Add a TODO
+const add = () => {
+    //add object to list
+    let value=input.value;
+    const object= { description: value, complete: false, index: task.length };
+    task.push(object);
+    //display each list
     const li = document.createElement('li');
     li.classList.add('item');
-    li.innerHTML = `<input type="checkbox" name="tasks" class="checkbox"> <p> ${task[i].description} ${task[i].index}</p>`;
-    m.appendChild(li);
-  }
+    li.innerHTML = `<input type="checkbox" name="tasks" class="checkbox"> <p> ${value}</p> <i id="trash" class="fa fa-trash" aria-hidden="true"></i>  `;
+    list.appendChild(li);
+    // console.log(task);
 };
-display();
+
+
+input.addEventListener("keydown", function(e){
+      if (e.keyCode === 13) {
+        add();
+    }
+});
+
+
+//remove a TODO
