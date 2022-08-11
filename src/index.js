@@ -1,30 +1,43 @@
 import './style.css';
-import task from './list.js';
-
-
-const list = document.getElementById('lists');
-const input=document.querySelector(".input");
+import task from './modulus/list.js';
+import add from './modulus/addlist.js';
+import {input, list} from './modulus/getelements.js';
+import edit from './modulus/editD.js';
 
 //Add a TODO
-const add = () => {
-    //add object to list
-    let value=input.value;
-    const object= { description: value, complete: false, index: task.length };
-    task.push(object);
-    //display each list
-    const li = document.createElement('li');
-    li.classList.add('item');
-    li.innerHTML = `<input type="checkbox" name="tasks" class="checkbox"> <p> ${value}</p> <i id="trash" class="fa fa-trash" aria-hidden="true"></i>  `;
-    list.appendChild(li);
-    // console.log(task);
-};
-
-
 input.addEventListener("keydown", function(e){
       if (e.keyCode === 13) {
         add();
     }
 });
 
+/////////////////////////////
 
+//Edit TODO task discription
+list.addEventListener("keydown", function(e){
+  if(e.target.id){
+    const txtchange=document.getElementById(e.target.id);
+    let id= e.target.id;
+      if (e.keyCode === 13) {
+        edit(txtchange,id);
+       }
+}
+});
+
+
+const remove = (rem,id) => {
+   const item=document.getElementById(id);
+   // console.log(item);
+   item.style.display="none";
+
+}
 //remove a TODO
+// const btn=document.getElementById("trash");
+list.addEventListener("click", function(e){
+  if(e.target.id==="trash"){
+    // const rem=document.getElementById(e.target.id);
+    let id= e.target.id;
+    console.log(id);
+    remove(id);
+}
+})
