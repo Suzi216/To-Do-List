@@ -1,3 +1,3 @@
- const task = [];
+const task = [];
 
 export default task;

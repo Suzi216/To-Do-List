@@ -1,16 +1,12 @@
-//remove a TODO
+// remove a TODO
 import task from './list.js';
-import {list} from './getelements.js';
+// import { list } from './getelements.js';
 
 const remove = (id) => {
   // remove object from list
-   task.splice(id, 1);
-   window.localStorage.setItem('task', JSON.stringify(task));
-//remove list from display
-   list.removeChild(list.children[id]);
-  //reset the indexes
-   task.forEach((e, i) => e.index = i);
-   console.log(task);
-}
+  task.splice(id, 1);
+  localStorage.setItem('ls', JSON.stringify(task));
+  task.sort((a, b) => a.index - b.index);
+};
 
 export default remove;

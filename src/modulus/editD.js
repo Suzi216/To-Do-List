@@ -1,11 +1,10 @@
-//Edit task discription
+// Edit task discription
 import task from './list.js';
 
-const edit = (id) =>{
-  const txtchange=document.getElementById(id);
-  const vl=txtchange.value;
-  task[id].description=vl;
-  console.log(task);
-}
+const edit = (txtchange, id) => {
+  const vl = txtchange.value;
+  task[id].description = vl;
+  localStorage.setItem('ls', JSON.stringify(task));
+};
 
 export default edit;

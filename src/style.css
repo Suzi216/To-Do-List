@@ -1,22 +1,25 @@
 body div {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    right: 25%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  right: 25%;
 }
 
-.item{
-   display: flex;
-   flex-direction: row;
-   list-style: none;
-   justify-content:flex-start;
-   flex-grow: 2;
-   grid-gap: 10%;
-   border: 2px solid black;
+.item {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: flex-start;
+  flex-grow: 2;
+  grid-gap: 10%;
+  border: 2px solid black;
 }
 
-.item i{
+.item i {
   margin-top: 1%;
-   margin-left: auto;
-   /* align-self: flex-end; */
+  margin-left: auto;
+}
+
+li {
+  display: none;
 }

@@ -1,4 +1,4 @@
-var list = document.getElementById('lists');
-var input=document.querySelector(".input");
+const list = document.getElementById('lists');
+const input = document.querySelector('.input');
 
-export  {list, input};
+export { list, input };
