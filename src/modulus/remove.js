@@ -4,8 +4,17 @@ import task from './list.js';
 
 const remove = (id) => {
   // remove object from list
+
   task.splice(id, 1);
-  localStorage.setItem('ls', JSON.stringify(task));
+  task=JSON.parse(localStorage.getItem("ls"));
+  const update=task.filter((n,index) => {
+    console.log(n);
+    if(n.index!==index){
+      n.index=index;
+    }
+    return n;
+  })
+  localStorage.setItem('ls', JSON.stringify(update));
   task.sort((a, b) => a.index - b.index);
 };
 
