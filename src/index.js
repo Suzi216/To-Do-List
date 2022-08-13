@@ -1,8 +1,9 @@
 import './style.css';
 import add from './modulus/addlist.js';
-import { input, list } from './modulus/getelements.js';
+import { input, list,out } from './modulus/getelements.js';
 import remove from './modulus/remove.js';
 import display from './modulus/display.js';
+import deleteAll from './modulus/deleteAll';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Add a TODO
@@ -21,6 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
       remove(id);
     }
   });
+
+  out.addEventListener('click', (e) =>{
+    alert("hrfndc");
+      deleteAll();
+  })
+
+console.log(out);
 
 
   // list.addEventListener('click', (e)=> {
