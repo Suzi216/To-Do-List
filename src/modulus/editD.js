@@ -1,12 +1,13 @@
+/* eslint-disable */
 // Edit task discription
-import display from "./display.js";
-import { list } from "./getelements.js";
+import display from './display.js';
+import { list } from './getelements.js';
 
 const edit = (txtchange, id) => {
   let arr = [];
-  let str = "";
+  let str = '';
 
-  const listArrStr = localStorage.getItem("ls");
+  const listArrStr = localStorage.getItem('ls');
   arr = JSON.parse(listArrStr);
 
   const updateTask = arr.filter((item) => {
@@ -16,9 +17,9 @@ const edit = (txtchange, id) => {
     return item;
   });
 
-  localStorage.setItem("ls", JSON.stringify(updateTask));
+  localStorage.setItem('ls', JSON.stringify(updateTask));
 
-  str = "";
+  str = '';
   list.innerHTML = str;
   display();
 };

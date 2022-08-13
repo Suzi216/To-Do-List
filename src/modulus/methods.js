@@ -1,12 +1,10 @@
-
-
-const methodT = () =>{
-  let vl=true;
-    return vl;
+const methodT = () => {
+  const vl = true;
+  return vl;
 };
 
-const methodF = () =>{
+const methodF = () => {
 
 };
 
-export default {methodF, methodT};
+export default { methodF, methodT };
