@@ -10,6 +10,16 @@ body div {
   flex-direction: row;
   list-style: none;
   justify-content: flex-start;
+  flex-grow: 2;
   grid-gap: 10%;
   border: 2px solid black;
+}
+
+.item i {
+  margin-top: 1%;
+  margin-left: auto;
+}
+
+li {
+  display: none;
 }

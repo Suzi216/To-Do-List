@@ -1,31 +1,26 @@
 import './style.css';
+import add from './modulus/addlist.js';
+import { input, list } from './modulus/getelements.js';
+import remove from './modulus/remove.js';
+import display from './modulus/display.js';
 
-const m = document.getElementById('lists');
+document.addEventListener('DOMContentLoaded', () => {
+  // Add a TODO
+  input.addEventListener('keydown', (e) => {
+    if (e.keyCode === 13) {
+      add();
+    }
+  });
 
-const task = [
-  {
-    description: 'Task ',
-    complete: false,
-    index: 1,
-  },
-  {
-    description: 'Task ',
-    complete: false,
-    index: 2,
-  },
-  {
-    description: 'Task ',
-    complete: false,
-    index: 3,
-  },
-];
+  // remove a TODO
+  list.addEventListener('click', (e) => {
+    if (e.target.matches('i')) {
+      const { id } = e.target;
+      const l = e.target.parentElement;
+      list.removeChild(l);
+      remove(id);
+    }
+  });
 
-const display = () => {
-  for (let i = 0; i < task.length; i += 1) {
-    const li = document.createElement('li');
-    li.classList.add('item');
-    li.innerHTML = `<input type="checkbox" name="tasks" class="checkbox"> <p> ${task[i].description} ${task[i].index}</p>`;
-    m.appendChild(li);
-  }
-};
-display();
+  display();
+});
