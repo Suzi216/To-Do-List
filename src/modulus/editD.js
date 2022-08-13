@@ -1,23 +1,27 @@
+/* eslint-disable */ 
 // Edit task discription
-// import task from './list.js';
-import display from './display.js';
-
+import display from "./display.js";
+import { list } from "./getelements.js";
 
 const edit = (txtchange, id) => {
-  let task=[];
-  const vl = txtchange.value;
-  // task[id].description = vl;
- task=JSON.parse(localStorage.getItem("ls"));
- // task=localStorage
- console.log(vl);
-  const update=task.filter(n => {
-    console.log(n);
-    if(n.index===id){
-      n.description=vl;
+  let arr = [];
+  let str = "";
+
+  const listArrStr = localStorage.getItem("ls");
+  arr = JSON.parse(listArrStr);
+
+  const updateTask = arr.filter((item) => {
+    if (item.index === id) {
+      item.description = txtchange;
     }
-  })
-  localStorage.setItem('ls', JSON.stringify(update));
-  // display();
+    return item;
+  });
+
+  localStorage.setItem("ls", JSON.stringify(updateTask));
+
+  str = "";
+  list.innerHTML = str;
+  display();
 };
 
 export default edit;

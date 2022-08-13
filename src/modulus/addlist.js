@@ -1,24 +1,25 @@
 // Add a TODO
-import task from './list.js';
-import { input, list } from './getelements.js';
+import display from "./display.js";
+import { input, list } from "./getelements.js";
 
 const add = () => {
+  let arr = [];
+  let str = "";
   // add object to list
   const { value } = input;
-  const object = { description: value, complete: false, index: task.length };
-  if (localStorage.getItem('ls') === null) {
-    task.push(object);
-    localStorage.setItem('ls', JSON.stringify(task));
+  const newArr = JSON.parse(localStorage.getItem("ls"));
+  const object = { description: value, complete: false, index: newArr.length };
+  if (localStorage.getItem("ls") === null) {
+    arr.push(object);
+    localStorage.setItem("ls", JSON.stringify(arr));
   } else {
-    task.push(object);
-    localStorage.setItem('ls', JSON.stringify(task));
+    const listArrStr = localStorage.getItem("ls");
+    arr = JSON.parse(listArrStr);
+    arr.push(object);
+    localStorage.setItem("ls", JSON.stringify(arr));
   }
-  // display each list
-  const li = document.createElement('li');
-  li.classList.add('item');
-  li.innerHTML = `<input type="checkbox" name="tasks" class="checkbox"> <input id=${task.length - 1} type="text" class="border border-0 field" value="${value}"> <i id=${task.length - 1} class="fa fa-trash edit" aria-hidden="true"></i> `;
-  list.appendChild(li);
-  window.localStorage.setItem('list', JSON.stringify(list));
+  list.innerHTML = str;
+  display();
 };
 
 export default add;
