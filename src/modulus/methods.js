@@ -1,0 +1,12 @@
+
+
+const methodT = () =>{
+  let vl=true;
+    return vl;
+};
+
+const methodF = () =>{
+
+};
+
+export default {methodF, methodT};

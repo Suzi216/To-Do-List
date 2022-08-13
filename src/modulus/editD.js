@@ -1,4 +1,3 @@
-/* eslint-disable */ 
 // Edit task discription
 import display from "./display.js";
 import { list } from "./getelements.js";
