@@ -1,6 +1,7 @@
-/* eslint-disable */ 
+/* eslint-disable */
 import edit from "./editD.js";
 import { list } from "./getelements.js";
+import complete from './completechange.js';
 let arr = [];
 const display = () => {
   if (localStorage.getItem("ls") === null) {
@@ -33,6 +34,15 @@ const display = () => {
         edit(input.value, n.index);
       }
     });
+    checkbox.addEventListener("click", (e) => {
+        let check=checkbox.checked;
+        // console.log(indexOf(e.target));
+        console.log(check);
+
+        complete(check,n.index,input);
+    });
+
+
   });
 };
 
