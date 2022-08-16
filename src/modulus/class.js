@@ -1,3 +1,4 @@
+/* eslint-disable */
 import display from './display.js';
 import { input, list } from './getelements.js';
 
