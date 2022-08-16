@@ -1,5 +1,4 @@
 // Edit task discription
-
 const complete = (check, id, input) => {
   let arr = [];
 
@@ -15,17 +14,7 @@ const complete = (check, id, input) => {
       return item;
     });
     localStorage.setItem('ls', JSON.stringify(updateTask));
-  } else {
-    input.style.textDecoration = 'none';
-    const updateTask = arr.filter((item) => {
-      if (item.index === id) {
-        item.complete = false;
-      }
-      return item;
-    });
-    localStorage.setItem('ls', JSON.stringify(updateTask));
   }
-  // display();
 };
 
 export default complete;

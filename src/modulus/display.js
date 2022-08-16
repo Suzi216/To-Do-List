@@ -1,5 +1,5 @@
 /* eslint-disable */
-import edit from "./editD.js";
+import edit from "./edit.js";
 import { list } from "./getelements.js";
 import complete from './completechange.js';
 let arr = [];
@@ -36,9 +36,6 @@ const display = () => {
     });
     checkbox.addEventListener("click", (e) => {
         let check=checkbox.checked;
-        // console.log(indexOf(e.target));
-        console.log(check);
-
         complete(check,n.index,input);
     });
 
