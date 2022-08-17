@@ -38,8 +38,6 @@ const display = () => {
         let check=checkbox.checked;
         complete(check,n.index,input);
     });
-
-
   });
 };
 
