@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   input.addEventListener('keydown', (e) => {
     if (e.keyCode === 13) {
       const methods = new File();
-      methods.add(input,list);
+      methods.add(input, list);
     }
   });
 

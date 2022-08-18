@@ -1,4 +1,3 @@
-
 // ReMOVE TODO
 export const remove = (id) => {
   // remove object from list
@@ -35,5 +34,4 @@ export const add = (input) => {
     localStorage.setItem('ls', JSON.stringify(arr));
   }
   return arr[0].description;
-
 };
