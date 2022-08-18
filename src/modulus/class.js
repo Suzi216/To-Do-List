@@ -1,16 +1,16 @@
 /* eslint-disable */
 import display from './display.js';
-import { input, list } from './getelements.js';
+import {  list } from './getelements.js';
 
 export class File {
   // Add a TODO
-   add = () => {
+   add = (input) => {
      let arr = [];
      const str = '';
      // add object to list
      const { value } = input;
-     const newArr = JSON.parse(localStorage.getItem('ls'));
-     const object = { description: value, complete: false, index: newArr.length };
+     // const newArr = JSON.parse(localStorage.getItem('ls'));
+     const object = { description: value, complete: false, index: arr.length};
      if (localStorage.getItem('ls') === null) {
        arr.push(object);
        localStorage.setItem('ls', JSON.stringify(arr));
@@ -21,7 +21,7 @@ export class File {
        localStorage.setItem('ls', JSON.stringify(arr));
      }
      list.innerHTML = str;
-     display();
+     display()
    };
 
    remove = (id) => {
@@ -33,7 +33,7 @@ export class File {
        if (n.index !== index) {
          n.index = index;
        }
-       return n;
+       return arr;
      });
      localStorage.setItem('ls', JSON.stringify(update));
    };
@@ -60,4 +60,5 @@ export class File {
      list.innerHTML = str;
      display();
    };
+
 }
