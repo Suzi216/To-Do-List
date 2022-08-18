@@ -1,12 +1,13 @@
-// import {File} from './class.js';
+
 import { remove, add } from './mocks.js';
+import { File } from '../modulus/class.js'
 
 test('add to list works', () => {
   const input = 'Hello there';
   expect(add(input)).toMatch('Hello there');
 });
 
-//
+
 test('remove from list works', () => {
   const arr = [
     { description: 'marsela', complete: false, index: 0 },
