@@ -9,8 +9,8 @@ export class File {
      const str = '';
      // add object to list
      const { value } = input;
-     const newArr = JSON.parse(localStorage.getItem('ls'));
-     const object = { description: value, complete: false, index: newArr.length};
+     // const newArr = JSON.parse(localStorage.getItem('ls'));
+     const object = { description: value, complete: false, index: arr.length};
      if (localStorage.getItem('ls') === null) {
        arr.push(object);
        localStorage.setItem('ls', JSON.stringify(arr));
@@ -21,7 +21,7 @@ export class File {
        localStorage.setItem('ls', JSON.stringify(arr));
      }
      list.innerHTML = str;
-     display();
+     display()
    };
 
    remove = (id) => {
@@ -60,4 +60,5 @@ export class File {
      list.innerHTML = str;
      display();
    };
+
 }
