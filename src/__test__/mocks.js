@@ -35,3 +35,24 @@ export const add = (input) => {
   }
   return arr[0].description;
 };
+
+//Edit a TODO
+export const edit = (txtchange, id) => {
+  let arr = [
+    { description: 'suzana', complete: false, index: 0 },
+    { description: 'marsela', complete: false, index: 1 },
+  ];
+  localStorage.setItem('ls', JSON.stringify(arr));
+  const listArrStr = localStorage.getItem('ls');
+  arr = JSON.parse(listArrStr);
+
+  const updateTask = arr.filter((item) => {
+    if (item.index === id) {
+      item.description = txtchange;
+    }
+    return item;
+  });
+
+  localStorage.setItem('ls', JSON.stringify(updateTask));
+  return arr;
+};

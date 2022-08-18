@@ -1,4 +1,4 @@
-import { remove, add } from './mocks.js';
+import { remove, add, edit } from './mocks.js';
 
 describe('Add/Remove tests', () => {
   test('add to list works', () => {
@@ -13,3 +13,14 @@ describe('Add/Remove tests', () => {
     expect(remove(0)).toEqual(arr);
   });
 });
+
+
+  test("edit list", () =>{
+    let arr = [
+      { description: 'CHANGED', complete: false, index: 0 },
+      { description: 'marsela', complete: false, index: 1 },
+    ];
+    const descr="CHANGED";
+    const index=0;
+    expect(edit(descr,index)).toEqual(arr);
+  });
