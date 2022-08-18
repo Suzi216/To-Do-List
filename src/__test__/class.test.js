@@ -1,4 +1,6 @@
-import { remove, add, edit, complete, deleteAll } from './mocks.js';
+import {
+  remove, add, edit, complete, deleteAll,
+} from './mocks.js';
 
 describe('Add/Remove tests', () => {
   test('add to list works', () => {

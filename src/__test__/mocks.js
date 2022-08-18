@@ -57,7 +57,7 @@ export const edit = (txtchange, id) => {
   return arr;
 };
 
-//Update DOTO complete status
+// Update DOTO complete status
 export const complete = (check, id, input) => {
   let arr = [
     { description: 'suzana', complete: false, index: 0 },
@@ -88,7 +88,7 @@ export const deleteAll = () => {
   ];
   localStorage.setItem('ls', JSON.stringify(arr));
   const listArrStr = localStorage.getItem('ls');
-  let listArr = JSON.parse(listArrStr);
+  const listArr = JSON.parse(listArrStr);
 
   for (let length = listArr.length - 1; length >= 0; length -= 1) {
     if (listArr[length].complete === true) {
